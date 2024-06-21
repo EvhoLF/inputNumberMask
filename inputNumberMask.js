@@ -1,8 +1,8 @@
 function formatPhoneNumber(event) {
-    event.target.setAttribute('maxlength', '18');
+    event.target.setAttribute('maxlength', '16');
     const input = event.target.value.replace(/\D/g, '').replace(/^7/, '');
     const formatted = input.replace(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/,
-        (_, p1="", p2="", p3="", p4="") => `+7 (${p1}) ${p2} ${p3} ${p4}`.trim()
+        (_, p1="", p2="", p3="", p4="") => `+7 ${p1} ${p2} ${p3} ${p4}`.trim()
     );
     event.target.value = formatted;
 }
